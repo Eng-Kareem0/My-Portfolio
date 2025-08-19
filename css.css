@@ -1009,3 +1009,52 @@ footer {
         min-height: 44px; /* Recommended minimum touch target size */
     }
 }
+
+/* أضف هذه الأنماط في نهاية ملف CSS */
+/* تحسينات للقائمة على جميع الأجهزة */
+
+/* تحسين أداء التمرير في القائمة */
+nav {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+/* تحسين التفاعل مع الأزرار */
+.mobile-menu-toggle, 
+.close-menu, 
+nav a, 
+.filter-btn, 
+.btn, 
+.social-links a, 
+.footer-social a {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+/* تحسين أداء الحركات */
+nav, .portfolio-item, .service-card {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* تحسين حجم الهدف اللمسي على الأجهزة الصغيرة */
+@media (max-width: 768px) {
+    nav a {
+        padding: 15px 20px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-menu-toggle, .close-menu {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
